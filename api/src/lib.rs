@@ -22,9 +22,7 @@ struct AppState {
 
 fn router() -> Router {
     let cors = CorsLayer::new()
-        // allow `GET` and `POST` when accessing the resource
         .allow_methods([Method::GET, Method::POST])
-        // allow requests from any origin
         .allow_origin(Any);
 
     let shared_state = Arc::new(AppState {
